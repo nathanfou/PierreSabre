@@ -55,5 +55,9 @@ public class Humain {
 	public void afficherArgent() {
 		System.out.println(nom + " Dispose de " + getArgent() + " €");
 	}
+	
+	public String getNom() {
+		return nom;
+	}
 }
 
