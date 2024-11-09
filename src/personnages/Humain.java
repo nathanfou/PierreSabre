@@ -35,7 +35,7 @@ public class Humain {
 	}
 	
 	public String parler() {
-		return ("L'Humain " + nom + " : ");
+		return ("(L'Humain " + nom + ") - ");
 		
 	}
 	

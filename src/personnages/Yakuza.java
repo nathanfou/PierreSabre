@@ -2,23 +2,24 @@ package personnages;
 
 public class Yakuza extends Humain {
 	private String clan;
-	private int reputation = 0;
+	private int reputation = 4;
 	
 	public Yakuza(String nom, String boisson, int argent, String clan) {
 		super(nom, boisson, argent);
-		this.setClan(clan);
+		this.clan = clan;
 	}
 	
 	public String getClan() {
 		return clan;
 	}
 	
-	public void setClan(String clan) {
-		this.clan = clan;
-	}
-
 	
 
+	
+	@Override
+	public String parler() {
+		return ("(Le Yakuza " + getNom() + ") - ");
+	}
 
 
 		
@@ -35,6 +36,27 @@ public class Yakuza extends Humain {
 }
 	
 	
+	
+	public void perdre() {
+		if (reputation > 0) {
+		reputation -= 1;
+		}
+		System.out.println(parler() + "J'ai perdu mon duel et mes " + getArgent() + " sous, snif... J'ai déshonoré le clan de " + getClan() + ".");
+		perdreArgent(getArgent());
+		
+	}
+	
+	public void gagner(int gain) {
+		
+		reputation += 1;
+		gagnerArgent(gain);
+		System.out.println(parler() + "Ce ronin pensait vraiment battre " + getNom() + 
+				" du clan de " + getClan() + "?" + " Je l'ai dépouillé de ses " + gain + " sous.");
+	}
+	
+	public int getReputation() {
+		return reputation;
+	}
 }
 	
 	
